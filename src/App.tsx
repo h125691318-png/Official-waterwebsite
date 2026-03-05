@@ -214,7 +214,8 @@ const Hero = () => {
             </h1>
             <p className="text-xl text-slate-300 mb-8 leading-relaxed max-w-xl font-light">
               專營 <span className="text-white font-medium">冷熱排水管免打牆止漏</span> 與 <span className="text-white font-medium">排水管水刀通管清洗</span>。<br />
-              引進專利數位精密設備，SGS檢驗無毒材料，給您最安心的品質保證。
+              管路漏水毀了裝潢、管路堵塞通不盡？這些疑難雜症我們最懂！
+              專業團隊在此，專攻各種疑難雜症，徹底疏通 + 完美止漏，一勞永逸解決所有水害煩惱！
             </p>
             <div className="flex flex-col sm:flex-row gap-5">
               <a href="tel:0975567591" className="bg-primary text-white px-10 py-5 rounded-2xl text-lg font-bold hover:bg-primary-dark transition-all shadow-2xl shadow-primary/40 flex items-center justify-center gap-3 group">
