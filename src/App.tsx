@@ -222,7 +222,7 @@ const Hero = () => {
                 立即預約檢測
                 <ArrowRight className="group-hover:translate-x-2 transition-transform" />
               </a>
-              <a href="https://line.me/ti/p/@770bkai" target="_blank" rel="noreferrer" className="bg-accent text-white px-10 py-5 rounded-2xl text-lg font-bold hover:opacity-90 transition-all flex items-center justify-center gap-3 shadow-2xl shadow-accent/20">
+              <a href="https://line.me/R/ti/p/770bkai" target="_blank" rel="noreferrer" className="bg-accent text-white px-10 py-5 rounded-2xl text-lg font-bold hover:opacity-90 transition-all flex items-center justify-center gap-3 shadow-2xl shadow-accent/20">
                 <MessageCircle size={24} />
                 Line 線上諮詢
               </a>
