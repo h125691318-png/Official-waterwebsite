@@ -1275,7 +1275,7 @@ const Contact = () => {
                     </div>
                     <div>
                       <div className="text-slate-500 text-xs font-bold uppercase tracking-widest mb-1">電子信箱</div>
-                      <div className="text-xl font-black group-hover:text-primary transition-colors">garland314@gmail.com</div>
+                      <div className="text-xl font-black group-hover:text-primary transition-colors">garlanderic314@gmail.com</div>
                     </div>
                   </a>
                   <a href="https://line.me/ti/p/@770bkai" target="_blank" rel="noreferrer" className="flex items-center gap-8 group">
@@ -1284,7 +1284,7 @@ const Contact = () => {
                     </div>
                     <div>
                       <div className="text-slate-500 text-xs font-bold uppercase tracking-widest mb-1">Line ID</div>
-                      <div className="text-2xl font-black group-hover:text-accent transition-colors">@770bkai</div>
+                      <div className="text-2xl font-black group-hover:text-accent transition-colors">@770bkxai</div>
                     </div>
                   </a>
                   <div className="flex items-center gap-8">
