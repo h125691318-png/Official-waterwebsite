@@ -33,6 +33,7 @@ import {
   DollarSign
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
+import { Analytics } from '@vercel/analytics/react';
 
 const Logo = ({ isScrolled, isMobileMenuOpen, light = false }: { isScrolled?: boolean, isMobileMenuOpen?: boolean, light?: boolean }) => {
   const textColor = light ? 'text-white' : (isScrolled || isMobileMenuOpen ? 'text-primary' : 'text-white');
@@ -1472,6 +1473,7 @@ export default function App() {
       <Contact />
       <Footer />
       <FloatingContact />
+      <Analytics />
     </div>
   );
 }
