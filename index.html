@@ -1,13 +1,646 @@
 <!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>水道渠成</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
-</html>
+<html lang="zh-Hant-TW">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>歐佳利百川通｜冷熱水管免打牆止漏・排水道水刀通管清洗</title>
+  <meta name="description" content="歐佳利百川通提供冷熱水管免打牆止漏、排水道水刀通管清洗與管道內視鏡檢查。服務桃園、新竹、苗栗、台中、台北、宜蘭。LINE傳圖快速諮詢，透明報價，確認後施工。" />
+  <meta name="keywords" content="桃園水刀通管,中壢水刀通管,新竹水刀通管,台北水刀通管,台中水刀通管,宜蘭水刀通管,免打牆止漏,冷水管漏水,熱水管漏水,排水管堵塞,管道內視鏡,血小板工法,水管漏水不打牆,廚房排水管堵塞,浴室排水不順,浴室地排回水,水管漏水檢測,排水管異味,排水管水泥堵塞,水泥掉進水管,裝潢後排水堵塞,工地排水管堵塞" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://www.example.com/" />
 
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="zh_TW" />
+  <meta property="og:title" content="歐佳利百川通｜免打牆止漏・水刀通管清洗" />
+  <meta property="og:description" content="水管漏水不想破壞裝潢？排水管堵塞淹水很困擾？歐佳利百川通提供冷熱水管免打牆止漏、排水道水刀通管清洗與管道內視鏡檢查。" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "水刀通管跟傳統通管差在哪裡？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "傳統通管多半是針對堵塞點做局部疏通；水刀通管則是利用高壓水柱沖洗管壁，較適合油垢、污泥、皂垢、毛髮長期附著造成的反覆堵塞。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "裝潢後水泥掉進排水管，水刀可以處理嗎？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "水刀有機會處理部分水泥硬塊或砂漿堵塞，但會受到硬化程度、堵塞位置、管徑、彎頭深度與管線狀況影響，並不是百分之百保證清除。建議先用內視鏡檢查，再評估施工方式與風險。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "水刀施工後還會再堵嗎？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "水刀清洗可改善管壁油垢與污泥附著，但後續是否再堵仍會受到使用習慣、管線坡度、管徑、老舊程度與是否持續有油脂或異物進入管內影響。"
+        }
+      }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "歐佳利百川通",
+    "legalName": "歐佳利科技事業有限公司",
+    "taxID": "90333090",
+    "description": "冷熱水管免打牆止漏、排水道水刀通管清洗、管道內視鏡檢查服務。",
+    "telephone": "+886-983-313-815",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "槺榔44之1號",
+      "addressLocality": "新屋區",
+      "addressRegion": "桃園市",
+      "addressCountry": "TW"
+    },
+    "areaServed": ["台北", "桃園", "新竹", "苗栗", "台中", "宜蘭"],
+    "serviceType": ["冷熱水管免打牆止漏", "排水道水刀通管清洗", "管道內視鏡檢查"]
+  }
+  </script>
+
+  <style>
+    :root {
+      --bg: #eef8ff;
+      --text: #102033;
+      --muted: #607286;
+      --primary: #086fb7;
+      --primary-dark: #064e83;
+      --accent: #18a8c9;
+      --glass: rgba(255,255,255,.56);
+      --glass-strong: rgba(255,255,255,.72);
+      --line: rgba(255,255,255,.68);
+      --shadow: 0 24px 70px rgba(8,111,183,.16);
+      --soft-shadow: 0 14px 38px rgba(16,32,51,.08);
+      --radius: 26px;
+      --spring: cubic-bezier(.18,.89,.32,1.28);
+      --smooth: cubic-bezier(.22,1,.36,1);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: "Microsoft JhengHei", "微軟正黑體", "Noto Sans TC", system-ui, -apple-system, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 8% 10%, rgba(24,168,201,.22), transparent 28%),
+        radial-gradient(circle at 88% 16%, rgba(8,111,183,.15), transparent 30%),
+        linear-gradient(180deg, #f8fdff 0%, var(--bg) 48%, #fff 100%);
+      line-height: 1.75;
+      overflow-x: hidden;
+    }
+    body::before {
+      content: "";
+      position: fixed;
+      left: -120px;
+      top: 120px;
+      width: 360px;
+      height: 360px;
+      border-radius: 999px;
+      background: rgba(24,168,201,.28);
+      filter: blur(26px);
+      opacity: .48;
+      pointer-events: none;
+      z-index: -1;
+      animation: floatGlow 9s var(--smooth) infinite alternate;
+    }
+    @keyframes floatGlow {
+      from { transform: translate3d(0,0,0) scale(1); }
+      to { transform: translate3d(34px,-28px,0) scale(1.08); }
+    }
+    @keyframes springIn {
+      0% { opacity: 0; transform: translateY(24px) scale(.965); }
+      62% { opacity: 1; transform: translateY(-4px) scale(1.012); }
+      100% { opacity: 1; transform: translateY(0) scale(1); }
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+    .container { width: min(1180px, calc(100% - 32px)); margin: 0 auto; }
+
+    .topbar {
+      background: rgba(6,78,131,.86);
+      color: #fff;
+      font-size: 14px;
+      padding: 8px 20px;
+      text-align: center;
+      backdrop-filter: blur(18px) saturate(145%);
+      border-bottom: 1px solid rgba(255,255,255,.18);
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(255,255,255,.62);
+      backdrop-filter: blur(22px) saturate(165%);
+      -webkit-backdrop-filter: blur(22px) saturate(165%);
+      border-bottom: 1px solid rgba(255,255,255,.62);
+      box-shadow: 0 12px 34px rgba(8,111,183,.08);
+    }
+    .nav {
+      width: min(1180px, calc(100% - 32px));
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      padding: 14px 0;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 900;
+      letter-spacing: .03em;
+      transition: transform .42s var(--spring);
+    }
+    .brand:hover { transform: translateY(-2px) scale(1.018); }
+    .brand-logo-wrap {
+      width: 52px;
+      height: 52px;
+      border-radius: 18px;
+      overflow: hidden;
+      display: grid;
+      place-items: center;
+      background: var(--glass-strong);
+      border: 1px solid var(--line);
+      box-shadow: 0 18px 38px rgba(8,111,183,.18), inset 0 1px 0 rgba(255,255,255,.7);
+      backdrop-filter: blur(14px) saturate(150%);
+    }
+    .brand-logo { width: 100%; height: 100%; object-fit: cover; }
+    .logo-fallback {
+      display: none;
+      width: 100%;
+      height: 100%;
+      place-items: center;
+      color: #fff;
+      font-weight: 900;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+    }
+    .brand small { display: block; font-weight: 500; color: var(--muted); letter-spacing: 0; margin-top: -3px; }
+
+    .menu {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 15px;
+      font-weight: 800;
+      padding: 6px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.42);
+      border: 1px solid rgba(255,255,255,.66);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.7), 0 10px 28px rgba(8,111,183,.08);
+      backdrop-filter: blur(18px) saturate(160%);
+    }
+    .menu a {
+      padding: 10px 12px;
+      border-radius: 999px;
+      white-space: nowrap;
+      color: #21364a;
+      transition: transform .42s var(--spring), background .28s ease, color .28s ease, box-shadow .28s ease;
+    }
+    .menu a:hover, .menu a.active {
+      background: rgba(255,255,255,.78);
+      color: var(--primary);
+      box-shadow: 0 12px 24px rgba(8,111,183,.12), inset 0 1px 0 rgba(255,255,255,.88);
+      transform: translateY(-2px) scale(1.035);
+    }
+    .nav-cta, .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 999px;
+      font-weight: 900;
+      transition: transform .42s var(--spring), box-shadow .28s ease;
+    }
+    .nav-cta {
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      color: #fff;
+      padding: 10px 16px;
+      box-shadow: 0 16px 32px rgba(8,111,183,.24), inset 0 1px 0 rgba(255,255,255,.35);
+    }
+    .nav-cta:hover, .btn:hover { transform: translateY(-3px) scale(1.045); }
+    .nav-cta:active, .btn:active, .menu a:active { transform: translateY(1px) scale(.96); }
+
+    .page { display: none; }
+    .page.active { display: block; animation: springIn .56s var(--spring) both; }
+
+    .hero, .subhero {
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(180deg, rgba(255,255,255,.72) 0%, rgba(238,249,255,.62) 100%);
+      border-bottom: 1px solid rgba(255,255,255,.54);
+    }
+    .hero { padding: 86px 0 70px; }
+    .subhero { padding: 70px 0 44px; }
+    .hero-grid, .two-col, .contact-grid {
+      display: grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap: 42px;
+      align-items: center;
+    }
+    .eyebrow {
+      display: inline-flex;
+      padding: 8px 13px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.56);
+      color: var(--primary-dark);
+      font-weight: 900;
+      font-size: 14px;
+      margin-bottom: 18px;
+      border: 1px solid var(--line);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.82), 0 10px 24px rgba(8,111,183,.08);
+      backdrop-filter: blur(16px) saturate(150%);
+    }
+    h1, h2, h3 { line-height: 1.25; margin: 0; }
+    h1 { font-size: clamp(36px,5vw,62px); letter-spacing: -.04em; margin-bottom: 22px; color: #0d2438; }
+    h2 { font-size: clamp(28px,4vw,42px); letter-spacing: -.03em; color: #112a40; }
+    h3 { font-size: 23px; }
+    p { color: var(--muted); }
+    .lead { font-size: 19px; margin: 0 0 28px; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 14px; margin: 24px 0 0; }
+    .btn { min-height: 50px; padding: 12px 20px; border: 1px solid transparent; }
+    .btn-primary { background: linear-gradient(135deg, var(--primary), var(--accent)); color: #fff; box-shadow: 0 18px 34px rgba(8,111,183,.24), inset 0 1px 0 rgba(255,255,255,.3); }
+    .btn-secondary { background: rgba(255,255,255,.6); color: var(--primary-dark); border-color: var(--line); box-shadow: inset 0 1px 0 rgba(255,255,255,.85), 0 12px 24px rgba(8,111,183,.08); backdrop-filter: blur(16px); }
+
+    section.block { padding: 80px 0; }
+    .section-head { max-width: 780px; margin-bottom: 34px; }
+    .section-head.center { text-align: center; margin: 0 auto 38px; }
+    .section-kicker { color: var(--primary); font-weight: 900; margin-bottom: 8px; }
+    .section-head p { font-size: 18px; margin: 14px 0 0; }
+
+    .trust-row, .cards, .case-grid, .photo-grid, .area-grid, .flow-grid, .service-cards, .faq-list, .enterprise-grid { display: grid; gap: 18px; }
+    .trust-row { grid-template-columns: repeat(3, minmax(0,1fr)); }
+    .cards { grid-template-columns: repeat(4, minmax(0,1fr)); }
+    .case-grid { grid-template-columns: repeat(3, minmax(0,1fr)); }
+    .photo-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
+    .area-grid { grid-template-columns: repeat(6, minmax(0,1fr)); }
+    .flow-grid, .service-cards { grid-template-columns: repeat(2, minmax(0,1fr)); }
+    .enterprise-grid { grid-template-columns: repeat(3, minmax(0,1fr)); }
+
+    .glass, .card, .hero-card, .service-card, .sales-box, .case-card, .flow-box, .contact-card, .form-box, details, .trust-item, .problem-item, .photo-placeholder {
+      background: var(--glass);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--soft-shadow), inset 0 1px 0 rgba(255,255,255,.75);
+      backdrop-filter: blur(20px) saturate(165%);
+      -webkit-backdrop-filter: blur(20px) saturate(165%);
+      transition: transform .46s var(--spring), box-shadow .32s ease, background .32s ease;
+    }
+    .card, .hero-card, .sales-box, .case-card, .flow-box, .contact-card, .form-box, details { padding: 26px; }
+    .glass:hover, .card:hover, .hero-card:hover, .service-card:hover, .sales-box:hover, .case-card:hover, .flow-box:hover, .contact-card:hover, .form-box:hover, details:hover, .trust-item:hover, .problem-item:hover, .photo-placeholder:hover {
+      transform: translateY(-6px) scale(1.018);
+      box-shadow: 0 24px 58px rgba(8,111,183,.16), inset 0 1px 0 rgba(255,255,255,.82);
+      background: rgba(255,255,255,.68);
+    }
+    .card-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 17px;
+      background: rgba(232,247,255,.72);
+      display: grid;
+      place-items: center;
+      font-size: 24px;
+      margin-bottom: 16px;
+    }
+    .trust-item { padding: 12px; font-weight: 800; font-size: 14px; }
+    .problem-list { display: grid; gap: 12px; margin-top: 18px; }
+    .problem-item { display: flex; gap: 12px; padding: 14px; border-radius: 18px; }
+    .check { width: 25px; height: 25px; flex: 0 0 25px; border-radius: 999px; display: grid; place-items: center; background: linear-gradient(135deg, var(--accent), var(--primary)); color: #fff; font-weight: 900; }
+
+    .service-card { overflow: hidden; padding: 0; box-shadow: var(--shadow); }
+    .service-top { padding: 28px; background: linear-gradient(135deg, rgba(232,247,255,.68), rgba(255,255,255,.48)); border-bottom: 1px solid rgba(255,255,255,.5); }
+    .service-body { padding: 28px; }
+    .tag-list { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
+    .tag { background: rgba(238,248,255,.66); color: var(--primary-dark); border: 1px solid var(--line); border-radius: 999px; padding: 6px 12px; font-size: 14px; font-weight: 800; }
+    .photo-placeholder { min-height: 210px; display: grid; place-items: center; text-align: center; padding: 18px; color: var(--primary-dark); font-weight: 900; border-style: dashed; }
+    .service-image-card { overflow: hidden; padding: 0; min-height: 430px; }
+    .service-image { width: 100%; height: 100%; min-height: 430px; object-fit: cover; }
+    .image-caption { padding: 18px 22px; background: rgba(255,255,255,.62); border-top: 1px solid var(--line); }
+    .image-caption strong { display: block; color: var(--primary-dark); font-size: 18px; margin-bottom: 4px; }
+    .image-caption span { color: var(--muted); font-size: 15px; }
+    .image-fallback { display: none; min-height: 430px; padding: 24px; place-items: center; text-align: center; color: var(--primary-dark); font-weight: 900; background: linear-gradient(135deg, rgba(232,247,255,.82), rgba(255,255,255,.62)); }
+    .sales-box ul { color: var(--muted); }
+    .client-note { margin-top: 14px; padding: 16px; border-radius: 18px; background: rgba(255,255,255,.48); border: 1px solid var(--line); color: var(--primary-dark); font-weight: 800; }
+    .comparison-table { width: 100%; border-collapse: separate; border-spacing: 0 12px; min-width: 760px; }
+    .comparison-table th, .comparison-table td { text-align: left; padding: 14px 16px; background: rgba(255,255,255,.52); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); color: var(--muted); }
+    .comparison-table th { color: var(--primary-dark); font-weight: 900; }
+    .comparison-table th:first-child, .comparison-table td:first-child { border-left: 1px solid var(--line); border-radius: 16px 0 0 16px; font-weight: 900; color: var(--primary-dark); }
+    .comparison-table th:last-child, .comparison-table td:last-child { border-right: 1px solid var(--line); border-radius: 0 16px 16px 0; }
+
+    .step-list { counter-reset: step; display: grid; gap: 16px; margin-top: 24px; }
+    .step { counter-increment: step; display: grid; grid-template-columns: 48px 1fr; gap: 14px; padding: 16px; border-radius: 20px; background: rgba(247,252,255,.58); border: 1px solid var(--line); transition: transform .44s var(--spring); }
+    .step:hover { transform: translateX(6px) scale(1.01); }
+    .step::before { content: counter(step); width: 42px; height: 42px; border-radius: 15px; display: grid; place-items: center; background: linear-gradient(135deg, var(--primary), var(--accent)); color: #fff; font-weight: 900; }
+    .step strong { display: block; margin-bottom: 4px; }
+    .step span { color: var(--muted); }
+
+    .area-band { background: linear-gradient(135deg, rgba(6,78,131,.92), rgba(8,111,183,.86)); color: #fff; }
+    .area-band p { color: rgba(255,255,255,.86); }
+    .area-item { background: rgba(255,255,255,.16); border: 1px solid rgba(255,255,255,.28); border-radius: 20px; padding: 18px; text-align: center; font-weight: 900; font-size: 20px; backdrop-filter: blur(16px); transition: transform .44s var(--spring), background .28s ease; }
+    .area-item:hover { transform: translateY(-5px) scale(1.04); background: rgba(255,255,255,.24); }
+
+    details summary { cursor: pointer; font-weight: 900; color: #183148; }
+    details p, details ol { margin-bottom: 0; }
+    .contact-row { padding: 13px 0; border-bottom: 1px solid rgba(8,111,183,.12); }
+    .contact-row:last-child { border-bottom: 0; }
+    .contact-row strong { display: block; color: var(--primary-dark); }
+    .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    label { font-weight: 900; font-size: 14px; }
+    input, select, textarea { width: 100%; margin-top: 6px; border: 1px solid var(--line); border-radius: 16px; padding: 12px 13px; font: inherit; background: rgba(255,255,255,.56); }
+    textarea { min-height: 132px; resize: vertical; }
+    .full { grid-column: 1 / -1; }
+
+    .sticky-cta { position: fixed; right: 18px; bottom: 18px; z-index: 100; display: grid; gap: 10px; }
+    .sticky-cta a { width: 58px; height: 58px; border-radius: 999px; display: grid; place-items: center; color: #fff; font-weight: 900; box-shadow: 0 18px 34px rgba(16,32,51,.22); transition: transform .44s var(--spring); }
+    .sticky-cta a:hover { transform: translateY(-5px) scale(1.08); }
+    .line-btn { background: linear-gradient(135deg, #06c755, #34d982); }
+    .phone-btn { background: linear-gradient(135deg, var(--primary), var(--accent)); }
+
+    footer { background: rgba(12,34,56,.92); color: rgba(255,255,255,.86); padding: 34px 0; backdrop-filter: blur(18px); }
+    footer .container { display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
+    footer strong { color: #fff; }
+
+    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; } }
+    @media (max-width: 1100px) { .menu { font-size: 14px; gap: 3px; } .menu a { padding: 9px 9px; } }
+    @media (max-width: 980px) { .menu { display: none; } .hero-grid, .two-col, .contact-grid { grid-template-columns: 1fr; } .cards { grid-template-columns: repeat(2,1fr); } .case-grid, .area-grid, .enterprise-grid { grid-template-columns: repeat(3,1fr); } .flow-grid, .service-cards { grid-template-columns: 1fr; } }
+    @media (max-width: 640px) { .hero, .subhero { padding: 58px 0 46px; } section.block { padding: 58px 0; } .trust-row, .cards, .case-grid, .area-grid, .photo-grid, .form-grid, .enterprise-grid { grid-template-columns: 1fr; } .nav-cta { display: none; } }
+  </style>
+</head>
+<body>
+  <div class="topbar">LINE ID：567tonwater｜電話：0983-313-815｜服務地區：桃園・新竹・苗栗・台中・台北・宜蘭</div>
+
+  <header>
+    <nav class="nav" aria-label="主選單">
+      <a class="brand" href="#home" data-page-link="home" aria-label="歐佳利百川通首頁">
+        <span class="brand-logo-wrap">
+          <img class="brand-logo" src="img/Gemini_Generated_Image_9631yw9631yw9631.png" alt="歐佳利百川通 Logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';" />
+          <span class="logo-fallback">歐</span>
+        </span>
+        <span>歐佳利百川通<small>免打牆止漏・水刀通管</small></span>
+      </a>
+      <div class="menu">
+        <a href="#home" data-page-link="home">首頁</a>
+        <a href="#leak-repair" data-page-link="leak-repair">冷熱水管免打牆止漏</a>
+        <a href="#waterjet" data-page-link="waterjet">排水道水刀通管清洗</a>
+        <a href="#process" data-page-link="process">施工流程</a>
+        <a href="#area" data-page-link="area">服務範圍</a>
+        <a href="#faq" data-page-link="faq">常見問題</a>
+        <a href="#contact" data-page-link="contact">聯絡我們</a>
+      </div>
+      <a class="nav-cta" href="tel:0983313815">立即來電</a>
+    </nav>
+  </header>
+
+  <main>
+    <article class="page active" id="page-home" data-title="歐佳利百川通｜冷熱水管免打牆止漏・排水道水刀通管清洗">
+      <section class="hero">
+        <div class="container hero-grid">
+          <div>
+            <div class="eyebrow">桃園出發｜北部・中部到府服務</div>
+            <h1>漏水、堵塞、異味，不想再一直反覆處理？</h1>
+            <p class="lead">歐佳利百川通專業處理冷熱水管免打牆止漏、排水道水刀通管清洗與管道內視鏡檢查。從現場判斷、施工說明到完工確認，協助您用更安心、清楚的方式處理家中的水管問題。</p>
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="https://line.me/R/ti/p/~567tonwater" target="_blank" rel="noopener">加入 LINE 傳圖諮詢</a>
+              <a class="btn btn-secondary" href="tel:0983313815">撥打 0983-313-815</a>
+            </div>
+            <div class="trust-row" style="margin-top:24px">
+              <div class="trust-item">透明報價，確認後施工</div>
+              <div class="trust-item">止漏提供一年保固</div>
+              <div class="trust-item">無效不收費</div>
+            </div>
+          </div>
+          <aside class="hero-card">
+            <h2>出現這些狀況，建議盡快檢查</h2>
+            <div class="problem-list">
+              <div class="problem-item"><span class="check">✓</span><div><strong>牆面、天花板持續滲水</strong><br>沒有下雨也在滴，可能與冷熱水給水管漏水有關。</div></div>
+              <div class="problem-item"><span class="check">✓</span><div><strong>浴室、廚房排水越來越慢</strong><br>可能是油垢、毛髮、皂垢與污泥長期累積。</div></div>
+              <div class="problem-item"><span class="check">✓</span><div><strong>地排冒泡、冒臭味或回水</strong><br>建議搭配內視鏡檢查堵塞位置與管內狀況。</div></div>
+              <div class="problem-item"><span class="check">✓</span><div><strong>通過一次沒多久又堵</strong><br>可能不是單點堵塞，而是管壁髒污與管徑縮小。</div></div>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section class="block">
+        <div class="container">
+          <div class="section-head center">
+            <div class="section-kicker">為什麼選擇歐佳利百川通</div>
+            <h2>先了解問題，再安排合適的處理方式</h2>
+            <p>漏水與排水堵塞最怕的是原因還沒釐清，就開始敲牆或施工。歐佳利百川通重視現場判斷、施工說明與透明報價，讓您在確認方式與費用後，再安心決定是否施工。</p>
+          </div>
+          <div class="cards">
+            <article class="card"><div class="card-icon">🏠</div><h3>免打牆止漏</h3><p>降低磁磚、牆面、結構與裝潢破壞，針對冷熱水管漏水進行管內／管外灌補修復。</p></article>
+            <article class="card"><div class="card-icon">💧</div><h3>高壓水刀通管</h3><p>針對油垢、污泥、毛髮、菜渣、皂垢等堵塞物進行清洗，改善排水不順。</p></article>
+            <article class="card"><div class="card-icon">🔍</div><h3>管道內視鏡</h3><p>不確定堵在哪裡？可查看管內堵塞位置與管路狀況，讓問題一目了然。</p></article>
+            <article class="card"><div class="card-icon">🧾</div><h3>透明報價</h3><p>現場說明施工方式、可能風險與費用，確認後才動工，讓您清楚知道每一筆花費。</p></article>
+          </div>
+        </div>
+      </section>
+    </article>
+
+    <article class="page" id="page-leak-repair" data-title="冷熱水管免打牆止漏｜歐佳利百川通">
+      <section class="subhero">
+        <div class="container two-col">
+          <div>
+            <div class="eyebrow">冷熱水管免打牆止漏</div>
+            <h1>水管漏水，不一定要先打牆</h1>
+            <p class="lead">牆面、天花板或浴室附近持續滲水，不一定要馬上大面積敲牆。歐佳利百川通會先了解漏水位置、滴水狀況與現場管路條件，再評估是否適合採用免打牆管內／管外灌補工法，盡量降低對居家裝潢的破壞。</p>
+            <div class="hero-actions"><a class="btn btn-primary" href="https://line.me/R/ti/p/~567tonwater" target="_blank" rel="noopener">LINE 傳漏水照片</a><a class="btn btn-secondary" href="tel:0983313815">立即來電</a></div>
+          </div>
+          <div class="service-image-card glass">
+            <img class="service-image" src="img\c6541208-91ff-47b1-8ceb-9e5113b35a41.png" alt="冷熱水管免打牆止漏檢測施工示意圖" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';" />
+            <div class="image-fallback">冷熱水管免打牆止漏<br>示意圖建議放置：師傅檢測牆面滲水、壓力測試、管路判斷畫面</div>
+            <div class="image-caption"><strong>免打牆止漏檢測施工示意</strong><span>透過現場檢測與管路判斷，盡量降低牆面、磁磚與裝潢破壞。</span></div>
+          </div>
+        </div>
+      </section>
+      <section class="block">
+        <div class="container two-col">
+          <div class="sales-box"><div class="section-kicker">適合處理的狀況</div><h2>不是所有漏水都要拆牆處理</h2><ul><li>冷水管漏水、熱水管漏水</li><li>牆內水管滲漏、天花板持續滴水</li><li>浴室、廚房、陽台附近水漬或壁癌</li><li>不想大面積敲牆、拆磁磚或破壞裝潢</li></ul><div class="tag-list"><span class="tag">免大面積開挖</span><span class="tag">降低裝潢破壞</span><span class="tag">透明報價</span><span class="tag">無效不收費</span></div></div>
+          <div class="sales-box"><div class="section-kicker">安心施工重點</div><h2>先判斷清楚，再決定怎麼處理</h2><p>水管漏水最怕沒有查明原因就開始敲牆。歐佳利百川通會先了解漏水位置、滴水頻率與現場管路狀況，說明可能原因與施工方式，讓您清楚知道每一步在做什麼。</p><p>若現場條件適合免打牆止漏，我們會盡量降低對磁磚、牆面與裝潢的破壞；若不適合，也會在施工前把原因與風險說明清楚。</p><div class="client-note">適合重視居家環境、不希望大面積開挖、希望先確認原因再施工的屋主。</div></div>
+        </div>
+      </section>
+      <section class="block" style="padding-top:0"><div class="container case-grid"><article class="case-card"><h3>不想拆磁磚</h3><p>浴室、廚房或剛裝潢完成的牆面，會優先評估是否可降低破壞式施工。</p></article><article class="case-card"><h3>想知道哪條管在漏</h3><p>透過現場檢測與用水狀況判斷，協助釐清冷水管、熱水管或其他滲水問題。</p></article><article class="case-card"><h3>擔心修了又漏</h3><p>施工前說明方式、費用與風險，完工後確認狀況，止漏服務提供一年保固。</p></article></div></section>
+    </article>
+
+    <article class="page" id="page-waterjet" data-title="排水道水刀通管清洗｜歐佳利百川通">
+      <section class="subhero">
+        <div class="container two-col">
+          <div>
+            <div class="eyebrow">排水道水刀通管清洗</div>
+            <h1>通過一次又堵，問題可能在管壁油垢</h1>
+            <p class="lead">廚房水槽、浴室地排或洗衣機排水變慢，很多時候不是單純卡到異物，而是油垢、皂垢、毛髮、菜渣、水泥砂漿與污泥附著在管內，讓管徑越來越小。高壓水刀可搭配旋轉噴頭與內視鏡檢查，針對管壁附著物與部分硬塊堵塞進行清洗，改善排水不順與反覆堵塞。</p>
+            <div class="hero-actions"><a class="btn btn-primary" href="https://line.me/R/ti/p/~567tonwater" target="_blank" rel="noopener">LINE 傳堵塞影片</a><a class="btn btn-secondary" href="tel:0983313815">立即來電</a></div>
+          </div>
+          <div class="service-image-card glass"><img class="service-image" src="img\e370c9bf-974f-42eb-8a27-c6d79769c27b.png" alt="排水道水刀通管清洗施工示意圖" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';" /><div class="image-fallback">排水道水刀通管清洗<br>示意圖建議放置：高壓水刀清洗地排、排水孔或管路入口畫面</div><div class="image-caption"><strong>排水道水刀通管清洗示意</strong><span>利用高壓水柱沖洗管壁，協助處理油垢、污泥、異物與部分硬塊堵塞。</span></div></div>
+        </div>
+      </section>
+      <section class="block"><div class="container two-col"><div class="sales-box"><div class="section-kicker">適合處理的狀況</div><h2>不是只通開，是把管內髒污洗出來</h2><ul><li>浴室排水不順、地排冒泡或異味</li><li>廚房水槽堵塞、油垢堆積</li><li>洗衣機排水溢水、大樓共管堵塞</li><li>通過沒多久又堵，懷疑管壁長期累積油垢或污泥</li><li>裝潢後或新建工地後，疑似水泥砂漿掉入排水管</li></ul><div class="tag-list"><span class="tag">高壓水刀清洗</span><span class="tag">管道內視鏡</span><span class="tag">廚房油垢堵塞</span><span class="tag">水泥堵塞評估</span></div></div><div class="sales-box"><div class="section-kicker">深層清洗重點</div><h2>不只是通開，而是改善反覆堵塞原因</h2><p>排水管堵塞常常不是單一異物卡住，而是油垢、皂垢、毛髮、菜渣、水泥砂漿與污泥附著在管內，使管徑越來越小。</p><p>水刀通管是利用高壓水柱沖洗管道內壁，搭配適合的噴頭與施工方式，針對管內油垢、污泥、皂垢、毛髮與部分硬塊堵塞進行清洗。若現場需要，也可搭配內視鏡檢查堵塞位置與管內狀況。</p><div class="client-note">若是水泥已經硬化，水刀有機會協助破除或沖散，但會受到硬化程度、堵塞位置、管徑與管線狀況影響，需現場評估，無法保證百分之百清除。</div></div></div></section>
+      <section class="block" style="padding-top:0"><div class="container"><div class="section-head"><div class="section-kicker">水刀與傳統通管差異</div><h2>為什麼通過一次又堵，可能需要水刀清洗？</h2><p>傳統通管多半是把堵塞點先打通，適合臨時排水不順；但如果管壁油垢、皂垢、污泥長期附著，單點疏通後仍可能很快再次堵塞。</p></div><div class="sales-box" style="overflow:auto"><table class="comparison-table"><thead><tr><th>比較項目</th><th>排水道水刀通管清洗</th><th>傳統通管</th></tr></thead><tbody><tr><td>處理方式</td><td>高壓水柱沖洗管壁，清除管內附著物</td><td>以鋼索、彈簧或工具打通堵塞點</td></tr><tr><td>適合情況</td><td>反覆堵塞、油垢厚、污泥多、管壁附著嚴重</td><td>第一次堵塞、輕微堵塞、臨時排水不順</td></tr><tr><td>清潔範圍</td><td>可針對一段管線進行清洗</td><td>多半針對局部堵塞點處理</td></tr><tr><td>檢查方式</td><td>可搭配內視鏡查看管內狀況</td><td>通常依排水是否恢復判斷</td></tr><tr><td>後續效果</td><td>若使用習慣正常，可降低短期反覆堵塞機率</td><td>若管壁髒污未清，可能較容易再次堵塞</td></tr></tbody></table></div></div></section>
+      <section class="block" style="padding-top:0"><div class="container two-col"><div class="sales-box"><div class="section-kicker">什麼情況建議水刀？</div><h2>反覆堵塞、異味、回水，不建議只看表面通不通</h2><ul><li>廚房水槽通完沒多久又變慢</li><li>浴室地排常冒泡、回水或有臭味</li><li>大樓或社區共管容易反覆堵塞</li><li>老屋管線長期未清洗，懷疑管壁堆積</li><li>裝潢後排水異常，懷疑水泥或建材碎屑掉入</li></ul></div><div class="sales-box"><div class="section-kicker">定期保養建議</div><h2>排水管不是壞了才需要處理</h2><p>若家中廚房、浴室排水使用頻繁，建議定期檢查與保養，尤其是老屋、社區大樓、餐飲店面或曾經反覆堵塞的管線。</p><ul><li>住家廚房：建議 6～12 個月視情況保養</li><li>浴室、陽台、洗衣排水：建議每年檢查一次</li><li>社區、大樓、店面：依使用量與堵塞頻率安排</li></ul></div></div></section>
+      <section class="block" style="padding-top:0"><div class="container two-col"><div class="sales-box"><div class="section-kicker">裝修後常見狀況</div><h2>剛裝潢完、新屋完工後，排水突然變慢？</h2><p>若房子剛裝修好、浴室剛翻新，或工地剛蓋好後出現排水慢、地排回水、馬桶或排水孔異常，常見原因之一是施工過程中水泥砂漿、磁磚粉塵或建材碎屑掉入排水管，後續硬化後造成堵塞。</p><p>這類堵塞建議先透過內視鏡檢查確認位置與狀況，再評估是否可使用高壓水刀處理。</p></div><div class="sales-box"><div class="section-kicker">施工前會先說明</div><h2>水泥堵塞可處理，但不是每一案都能完全清除</h2><p>水刀對部分水泥、砂漿、泥塊與硬塊堵塞有處理機會，但若水泥量太大、硬化太厚、卡在彎頭深處，或管線本身老舊脆弱，就可能需要其他處理方式。</p><p>我們會在施工前說明可行性、風險與費用，確認後才施工。</p></div></div></section>
+      <section class="block" style="padding-top:0"><div class="container case-grid"><article class="case-card"><h3>廚房水槽排水慢</h3><p>常見原因是油脂與食物殘渣長期堆積，水刀清洗可協助改善管壁附著問題。</p></article><article class="case-card"><h3>浴室地排回水異味</h3><p>可搭配內視鏡查看堵塞位置，協助判斷毛髮、皂垢、污泥或管線問題。</p></article><article class="case-card"><h3>裝修後水泥堵塞</h3><p>常發生在房子剛裝潢、浴室翻修或工地完工後。水刀可協助處理部分水泥硬塊，但仍需依現場狀況評估。</p></article></div></section>
+      <section class="block" style="padding-top:0"><div class="container two-col"><div class="sales-box"><div class="section-kicker">完工確認</div><h2>不只看水有沒有流，也會確認排水狀況</h2><p>施工完成後，會進行多次排水測試，確認排水是否恢復順暢。若現場條件允許，也可搭配內視鏡查看清洗後的管內狀況，讓您更清楚知道問題是否改善。</p></div><div class="sales-box"><div class="section-kicker">施工提醒</div><h2>水刀是專業清洗，不是所有管線都適合硬做</h2><p>若管線過於老舊、破裂、變形、彎頭過深，或堵塞物已嚴重硬化，會先說明施工風險與替代處理方式。確認後才施工，不會在沒有說明的情況下直接動工。</p></div></div></section>
+    </article>
+
+    <article class="page" id="page-enterprise-food" data-title="企業餐飲排水維護方案｜歐佳利百川通">
+      <section class="subhero">
+        <div class="container two-col">
+          <div>
+            <div class="eyebrow">企業餐飲方案</div>
+            <h1>餐飲店排水堵塞，不該等到淹水才處理</h1>
+            <p class="lead">歐佳利百川通提供連鎖餐飲、中央廚房、百貨美食街、飯店廚房與企業團膳排水管定期水刀清洗維護方案，協助降低油垢堆積、異味回流、排水堵塞與營業中斷風險。</p>
+            <div class="hero-actions"><a class="btn btn-primary" href="https://line.me/R/ti/p/~567tonwater" target="_blank" rel="noopener">洽詢企業維護方案</a><a class="btn btn-secondary" href="tel:0983313815">安排專人聯繫</a></div>
+          </div>
+          <aside class="sales-box">
+            <div class="section-kicker">定期維護價值</div>
+            <h2>把突發堵塞，改成可管理的保養排程</h2>
+            <p>餐飲業一旦在營業時間排水堵塞，影響的不只是維修費，還可能包含廚房作業、顧客觀感、商場規範與當日營收。</p>
+            <div class="tag-list"><span class="tag">可排非營業時間</span><span class="tag">施工紀錄留存</span><span class="tag">多店統一窗口</span><span class="tag">定期保養排程</span></div>
+          </aside>
+        </div>
+      </section>
+
+      <section class="block">
+        <div class="container">
+          <div class="section-head center">
+            <div class="section-kicker">適合對象</div>
+            <h2>高油污、高用水量、多分店場域，都建議定期保養</h2>
+            <p>餐飲排水管每天承受油脂、菜渣、食物殘渣與清潔廢水。若等到堵塞才處理，通常已經影響現場營運。</p>
+          </div>
+          <div class="enterprise-grid">
+            <article class="card"><h3>連鎖餐飲品牌</h3><p>多店統一維護、統一窗口、統一紀錄，降低分店臨時叫修與管理成本。</p></article>
+            <article class="card"><h3>中央廚房</h3><p>油污量高、排水負擔重，適合排入每月或每季定期水刀清洗維護。</p></article>
+            <article class="card"><h3>百貨美食街</h3><p>可配合商場指定施工時段，降低對營業與其他櫃位的影響。</p></article>
+            <article class="card"><h3>火鍋、燒肉、熱炒</h3><p>高油脂、高殘渣場域，建議縮短保養週期，避免反覆堵塞。</p></article>
+            <article class="card"><h3>飯店與團膳廚房</h3><p>排水穩定度與環境觀感要求高，適合用維護合約管理風險。</p></article>
+            <article class="card"><h3>店面與餐飲櫃位</h3><p>可依現場排水狀況，規劃單店或多店定期保養頻率。</p></article>
+          </div>
+        </div>
+      </section>
+
+      <section class="block" style="padding-top:0">
+        <div class="container">
+          <div class="section-head">
+            <div class="section-kicker">維護方案</div>
+            <h2>依照油污量、店型與分店數規劃保養頻率</h2>
+            <p>每間店的排水負擔不同，歐佳利百川通可依現場管線、營業型態、施工時段與分店數量，安排合適的清洗與保養週期。</p>
+          </div>
+          <div class="enterprise-grid">
+            <article class="service-card"><div class="service-top"><h2>單店基礎保養</h2><p>適合一般餐飲店、咖啡廳、早餐店、便當店。</p></div><div class="service-body"><ul><li>現場排水狀況檢查</li><li>高壓水刀清洗主排水管</li><li>排水測試與保養建議</li><li>依需求搭配內視鏡檢查</li></ul><div class="client-note">建議頻率：每 6 個月一次</div></div></article>
+            <article class="service-card"><div class="service-top"><h2>高油污定期保養</h2><p>適合火鍋、燒肉、炸物、熱炒、便當與中央廚房。</p></div><div class="service-body"><ul><li>管道內視鏡檢查</li><li>高壓水刀重點清洗</li><li>油垢、污泥、菜渣堆積處理</li><li>施工前後照片或影片紀錄</li></ul><div class="client-note">建議頻率：每 1～3 個月一次</div></div></article>
+            <article class="service-card"><div class="service-top"><h2>企業連鎖維護合約</h2><p>適合連鎖品牌、百貨商場、美食街、飯店與團膳。</p></div><div class="service-body"><ul><li>多店排水系統建檔</li><li>各店風險分級與保養排程</li><li>統一窗口與施工紀錄</li><li>緊急堵塞優先派工</li></ul><div class="client-note">可依分店數、區域與頻率規劃合約</div></div></article>
+          </div>
+        </div>
+      </section>
+
+      <section class="block" style="padding-top:0">
+        <div class="container two-col">
+          <div class="sales-box">
+            <div class="section-kicker">合作優勢</div>
+            <h2>讓總部、店長、物業都有紀錄可追蹤</h2>
+            <ul>
+              <li>可安排打烊後、開店前或離峰時段施工</li>
+              <li>可提供施工前後照片或影片紀錄</li>
+              <li>可依分店狀況建立保養週期</li>
+              <li>可針對高風險店點優先排程</li>
+              <li>可配合商場、管委會、企業內部請款流程</li>
+            </ul>
+          </div>
+          <div class="sales-box">
+            <div class="section-kicker">為什麼要定期保養</div>
+            <h2>降低營業中斷與臨時搶修風險</h2>
+            <p>餐飲業的排水管每天承受大量油脂、菜渣、食物殘渣與清潔廢水，時間一久，管壁容易形成厚重油垢與污泥，導致排水變慢、異味回流，甚至在營業中突然堵塞。</p>
+            <p><strong>定期水刀清洗，可以把排水維護從臨時救火，改成可預先安排的保養管理。</strong></p>
+          </div>
+        </div>
+      </section>
+
+      <section class="block" style="padding-top:0">
+        <div class="container">
+          <div class="section-head"><div class="section-kicker">保養頻率建議</div><h2>不同店型，保養週期不同</h2></div>
+          <div class="sales-box" style="overflow:auto">
+            <table class="comparison-table">
+              <thead><tr><th>店型</th><th>建議頻率</th><th>重點風險</th></tr></thead>
+              <tbody>
+                <tr><td>輕食、咖啡、飲料店</td><td>6 個月一次</td><td>排水慢、異味、局部堵塞</td></tr>
+                <tr><td>一般餐飲店</td><td>3～6 個月一次</td><td>菜渣、油垢、污泥累積</td></tr>
+                <tr><td>火鍋、燒肉、炸物、熱炒</td><td>1～3 個月一次</td><td>高油脂、反覆堵塞、營業中回水</td></tr>
+                <tr><td>中央廚房、美食街</td><td>每月或每季定期保養</td><td>高排水量、多點共管、停業損失</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+    </article>
+
+    <article class="page" id="page-process" data-title="施工流程｜歐佳利百川通">
+      <section class="subhero"><div class="container"><div class="eyebrow">施工流程</div><h1>從聯絡、檢查、報價到完工確認，每一步都說清楚</h1><p class="lead">不論是水管漏水還是排水堵塞，我們都會先了解現場狀況，說明可能原因、施工方式與費用，確認後再施工，讓您不用擔心不清楚就被動工。</p></div></section>
+      <section class="block"><div class="container flow-grid"><article class="flow-box"><h2>排水道水刀通管清洗流程</h2><div class="step-list"><div class="step"><div><strong>聯絡我們</strong><span>加入 LINE 傳圖留言或立即來電，說明堵塞位置、回水、異味或淹水狀況。</span></div></div><div class="step"><div><strong>現場報價</strong><span>透過訪談與初步觀察，說明施工方式、潛在風險與透明報價。</span></div></div><div class="step"><div><strong>水刀施工</strong><span>使用高壓水刀、內視鏡等專業設備進行疏通與清洗。</span></div></div><div class="step"><div><strong>完工確認</strong><span>施工完成後進行多次排水測試，確認管路恢復順暢；必要時可搭配內視鏡查看清洗後狀況。</span></div></div></div></article><article class="flow-box"><h2>冷熱水管免打牆止漏流程</h2><div class="step-list"><div class="step"><div><strong>聯絡我們</strong><span>加入 LINE 傳送漏水照片、影片或直接來電，說明漏水位置與滴水頻率。</span></div></div><div class="step"><div><strong>現場檢測與報價</strong><span>判斷可能是冷水管、熱水管、排水管、防水層或外牆滲水問題，並說明施工方式與費用。</span></div></div><div class="step"><div><strong>止漏施工</strong><span>確認管路迴路後，採用免打牆管內／管外灌補工法，降低破壞裝潢的機率。</span></div></div><div class="step"><div><strong>完工確認</strong><span>施工完成後進行專業檢測，提供一年保固，無效不收費。</span></div></div></div></article></div></section>
+    </article>
+
+    <article class="page" id="page-area" data-title="服務範圍｜歐佳利百川通"><section class="subhero area-band"><div class="container"><div class="eyebrow">服務範圍</div><h1>北部、中部到府服務</h1><p class="lead">服務範圍包含台北、桃園、新竹、苗栗、台中、宜蘭。住家、公寓、透天、社區大樓、店面皆可洽詢。若不確定所在地是否可安排，歡迎先加入 LINE 傳地址與現場照片。</p></div></section><section class="block area-band" style="padding-top:0"><div class="container area-grid"><div class="area-item">台北</div><div class="area-item">桃園</div><div class="area-item">新竹</div><div class="area-item">苗栗</div><div class="area-item">台中</div><div class="area-item">宜蘭</div></div></section></article>
+
+    <article class="page" id="page-faq" data-title="常見問題｜歐佳利百川通"><section class="subhero"><div class="container"><div class="eyebrow">常見問題</div><h1>漏水、堵塞、報價、保固，您關心的問題先說明</h1></div></section><section class="block"><div class="container faq-list"><details open><summary>給水管，冷水管或熱水管漏水如何檢測？</summary><p>給水管漏水常見特徵是：不管有沒有用水，漏水處整天都在滴水或滲水，且出水量通常不會忽大忽小。</p></details><details><summary>我可以自己先判斷熱水管或冷水管漏水嗎？</summary><ol><li>熱水管：關掉熱水器下方冷水進水開關，並打開熱水水龍頭排空熱水管內的水，觀察原漏水處是否持續漏或慢慢變乾。</li><li>冷水管：關掉水表或水塔總開關，打開水龍頭排空管內的水，觀察原漏水處是否持續漏或慢慢變乾。</li></ol></details><details><summary>免打牆止漏一定不用敲牆嗎？</summary><p>多數適合案件可以避免大面積敲牆，但仍需依現場管路狀況判斷。若管路嚴重老化、破裂過大或管線條件特殊，師傅會現場說明。</p></details><details><summary>不確定是哪裡堵塞怎麼辦？</summary><p>我們有高解析管道內視鏡設備，可查看堵塞位置、油垢堆積、異物卡住或管路異常狀況。</p></details><details><summary>水刀通管跟一般通管差在哪裡？</summary><p>一般通管常是先把堵塞點打通，但管壁油垢、皂垢與污泥不一定清除乾淨。高壓水刀則是利用高壓水柱沖洗管壁，較適合反覆堵塞、油垢厚、污泥多或大樓共管等情況。</p></details><details><summary>什麼情況比較建議使用水刀通管？</summary><p>若是第一次輕微堵塞，可以先評估一般疏通；但若通完幾週或幾個月又堵、排水孔有臭味、地排回水、廚房油垢堆積、大樓共管堵塞，或裝修後疑似水泥砂漿掉入管內，就比較建議先檢查並評估水刀清洗。</p></details><details><summary>水刀施工會不會傷管線？</summary><p>水刀是以高壓水柱沖洗管內，不像鋼索直接刮磨管壁；但實際仍需看管材、老舊程度、是否已有破裂或變形。若管線狀況脆弱，師傅會在施工前說明風險。</p></details><details><summary>水刀施工後還會再堵嗎？</summary><p>水刀清洗可改善管壁油垢與污泥附著，降低短期反覆堵塞機率。但後續是否再堵仍會受到使用習慣、管線坡度、管徑、老舊程度與是否持續有油脂或異物進入管內影響。</p></details><details><summary>水刀施工會不會很吵？</summary><p>施工會有設備運轉與水流沖洗聲，通常建議安排在白天或不影響鄰居的時段。若是社區大樓或店面，可先與管委會或管理單位確認施工時間。</p></details><details><summary>裝潢後水泥掉進排水管，水刀可以處理嗎？</summary><p>有機會處理。這種情況常發生在房子剛裝修好、浴室翻新或工地剛完工後，水泥砂漿、磁磚粉塵或建材碎屑掉進排水管，硬化後造成排水變慢或堵塞。水刀可以協助處理部分水泥硬塊或砂漿堵塞，但會受到硬化程度、堵塞位置、管徑、彎頭深度與管線狀況影響，並不是百分之百保證清除。建議先用內視鏡檢查，再評估施工方式與風險。</p></details><details><summary>水泥堵塞一定要打牆或拆管嗎？</summary><p>不一定。若水泥量不大、位置可施工，且管線狀況允許，可先評估使用水刀處理。但若水泥已完全硬化、範圍太大、卡在深處彎頭，或管線本身老舊脆弱，可能需要其他方式處理。現場會先說明可行性與風險，確認後才施工。</p></details><details><summary>施工後有保固嗎？</summary><p>冷熱水管免打牆止漏提供一年保固，並有無效不收費原則。詳細條件依現場狀況與施工前說明為準。</p></details></div></section></article>
+
+    <article class="page" id="page-contact" data-title="聯絡我們｜歐佳利百川通"><section class="subhero"><div class="container"><div class="eyebrow">聯絡我們</div><h1>先傳照片或影片，我們協助初步判斷</h1><p class="lead">遇到漏水、排水堵塞、異味或回水時，可先拍攝現場照片或影片，加入 LINE 傳給我們，讓師傅更快了解狀況並安排後續處理。</p></div></section><section class="block"><div class="container contact-grid"><div class="contact-card"><div class="contact-row"><strong>品牌名稱</strong>歐佳利百川通</div><div class="contact-row"><strong>公司名稱</strong>歐佳利科技事業有限公司</div><div class="contact-row"><strong>統一編號</strong>90333090</div><div class="contact-row"><strong>電話</strong><a href="tel:0983313815">0983-313-815</a></div><div class="contact-row"><strong>LINE ID</strong><a href="https://line.me/R/ti/p/~567tonwater" target="_blank" rel="noopener">567tonwater</a></div><div class="contact-row"><strong>地址</strong>桃園市新屋區槺榔44之1號</div><div class="hero-actions"><a class="btn btn-primary" href="https://line.me/R/ti/p/~567tonwater" target="_blank" rel="noopener">加入 LINE 詢問</a><a class="btn btn-secondary" href="tel:0983313815">立即撥打電話</a></div></div><div class="form-box"><h2>諮詢時建議提供</h2><div class="form-grid"><label>所在縣市／區域<input type="text" placeholder="例如：桃園中壢、台北大安、新竹竹北" /></label><label>問題類型<select><option>冷熱水管漏水</option><option>排水管堵塞</option><option>不確定，需協助判斷</option></select></label><label class="full">現場狀況<textarea placeholder="請描述漏水或堵塞位置、發生多久、是否有異味、回水、淹水，或是否曾處理過。"></textarea></label><div class="full"><a class="btn btn-primary" href="https://line.me/R/ti/p/~567tonwater" target="_blank" rel="noopener" style="width:100%">傳照片到 LINE：567tonwater</a></div></div></div></div></section></article>
+  </main>
+
+  <div class="sticky-cta"><a class="line-btn" href="https://line.me/R/ti/p/~567tonwater" target="_blank" rel="noopener">LINE</a><a class="phone-btn" href="tel:0983313815">☎</a></div>
+
+  <footer><div class="container"><div><strong>歐佳利百川通</strong><br>冷熱水管免打牆止漏・排水道水刀通管清洗・管道內視鏡檢查</div><div>服務地區：台北・桃園・新竹・苗栗・台中・宜蘭<br>© 歐佳利科技事業有限公司｜統編 90333090</div></div></footer>
+
+  <script>
+(() => {
+  const pages = {
+    home: 'page-home',
+    'leak-repair': 'page-leak-repair',
+    waterjet: 'page-waterjet',
+    process: 'page-process',
+    area: 'page-area',
+    faq: 'page-faq',
+    contact: 'page-contact'
+  };
+
+  function go(name) {
+    const key = pages[name] ? name : 'home';
+    const target = document.getElementById(pages[key]);
+    if (!target) return;
+
+    document.querySelectorAll('.page').forEach(page => page.classList.remove('active'));
+    target.classList.add('active');
+
+    document.querySelectorAll('[data-page-link]').forEach(link => {
+      link.classList.toggle('active', link.dataset.pageLink === key);
+    });
+
+    document.title = target.dataset.title || '歐佳利百川通';
+    if (location.hash !== '#' + key) history.pushState(null, '', '#' + key);
+    scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  document.body.addEventListener('click', event => {
+    const link = event.target.closest('[data-page-link]');
+    if (!link) return;
+    event.preventDefault();
+    go(link.dataset.pageLink);
+  });
+
+  addEventListener('popstate', () => go(location.hash.slice(1) || 'home'));
+  go(location.hash.slice(1) || 'home');
+})();
+</script>
+</body>
+</html>
