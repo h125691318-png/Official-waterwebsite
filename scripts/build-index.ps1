@@ -17,6 +17,12 @@ $pageFiles = @(
   "enterprise-food.html",
   "process.html",
   "area.html",
+  "area-taipei.html",
+  "area-taoyuan.html",
+  "area-hsinchu.html",
+  "area-miaoli.html",
+  "area-taichung.html",
+  "area-yilan.html",
   "faq.html",
   "contact.html"
 )
