@@ -226,6 +226,7 @@ function page(area) {
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
     gtag('config', 'G-TCQKD1YYL9');
+    gtag('config', 'AW-452340554');
   </script>
 </head>
 <body>
